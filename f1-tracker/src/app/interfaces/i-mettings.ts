@@ -1,4 +1,6 @@
-export interface IMeetings {
+export type IMeetings = IMeeting[]
+
+export interface IMeeting {
   meeting_key: number
   meeting_name: string
   meeting_official_name: string

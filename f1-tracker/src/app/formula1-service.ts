@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { IMeetings } from './interfaces/i-mettings';
 
 @Injectable({
@@ -16,9 +16,11 @@ export class Formula1Service {
 
   ]
 
-  public getCalendar(): Observable<IMeetings | null> {
+  public getCalendar(): Observable<IMeetings> {
     let url = this.urls[0];
-    return null;
-
+    return this.httpClient.get<IMeetings>(url).pipe(
+      catchError(() => of([]))
+    );
   }
+  
 }
