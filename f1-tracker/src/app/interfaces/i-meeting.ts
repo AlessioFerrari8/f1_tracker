@@ -1,5 +1,3 @@
-export type IMeetings = IMeeting[]
-
 export interface IMeeting {
   meeting_key: number
   meeting_name: string
@@ -19,3 +17,5 @@ export interface IMeeting {
   date_end: string
   year: number
 }
+
+export type IMeetings = IMeeting[]

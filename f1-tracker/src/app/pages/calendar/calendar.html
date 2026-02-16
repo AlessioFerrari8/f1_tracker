@@ -1,1 +1,7 @@
-<p>calendar works!</p>
+@for(meeting of meetings(); track meeting.meeting_key) {
+  <div class="meeting-card">
+    <h3>{{ meeting.meeting_official_name }}</h3>
+    <p>{{ meeting.circuit_short_name }} - {{ meeting.country_name }}</p>
+    <p>{{ meeting.date_start }} to {{ meeting.date_end }}</p>
+  </div>
+}
